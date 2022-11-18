@@ -5,6 +5,7 @@ import cv2
 
 # 영상 구간 자르기 & crop
 def clip(ori_name, start, end, clip_name):
+
     clip = VideoFileClip("./video/" + ori_name + ".mp4")
     clip = clip.without_audio()
     (w, h) = clip.size
@@ -14,6 +15,7 @@ def clip(ori_name, start, end, clip_name):
 
 # 영상 frame 분할
 def frame(video_name, H_fps):
+
     video_path = "./video/" + video_name + ".mp4"
     directory_path = "./frame/" + video_name
 
