@@ -52,8 +52,8 @@ def frame(video_name, H_fps):
 
     video.release()
 
-#image to video 변환
-def imaTovi(frame_dir, result_name, fps): # frame_dir : 비디오로 변환할 프레임이 있는 디렉토리 이름
+#frame to video 변환
+def fraTovi(frame_dir, result_name, fps): # frame_dir : 비디오로 변환할 프레임이 있는 디렉토리 이름
                                           # 변환 결과 비디오 이름 지정
                                           # fps 지정
     clips = []
@@ -72,4 +72,4 @@ def imaTovi(frame_dir, result_name, fps): # frame_dir : 비디오로 변환할 �
 if __name__ == "__main__":
     #clip("Clouds", 0, 10, "clip")
     #frame("clip", 6)
-    imaTovi("clip", "result", 6)
+    fraTovi("clip", "result", 6)
