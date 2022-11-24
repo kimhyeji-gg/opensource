@@ -52,6 +52,24 @@ def frame(video_name, H_fps):
 
     video.release()
 
+#image to video 변환
+def imaTovi(frame_dir, result_name, fps): # frame_dir : 비디오로 변환할 프레임이 있는 디렉토리 이름
+                                          # 변환 결과 비디오 이름 지정
+                                          # fps 지정
+    clips = []
+
+    directory = sorted(os.listdir('./frame/'+frame_dir))
+    print(directory)
+
+    for filename in directory:
+        if filename.endswith(".jpg"):
+            clips.append(ImageClip("./frame/" + frame_dir + "/" + filename).set_duration(1/fps))
+    print(clips)
+
+    video = concatenate_videoclips(clips, method="compose")
+    video.write_videofile(result_name + '.mp4', fps=fps)
+
 if __name__ == "__main__":
     #clip("Clouds", 0, 10, "clip")
-    frame("Clouds", 5)
+    #frame("clip", 6)
+    imaTovi("clip", "result", 6)
